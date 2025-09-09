@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 import { Videotype } from "../models/video";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
-import { Image } from "@imagekit/next";
+import { Image, Video } from "@imagekit/next";
 
 export default function Dashboard() {
     const [video, setVideo] = useState<Videotype[]>([])
@@ -33,17 +33,13 @@ export default function Dashboard() {
                 No video exist
             </div>)}
             {video.map((videos, index) => (
-                <Link key={videos.id?.toString() || index} href={`/videos?num=${videos.id}`}>
-                    <Card className="w-[320px] bg-black border border-gray-800 rounded-xl overflow-hidden cursor-pointer hover:bg-gray-900 transition mb-6">
+                    <Card key={videos.id?.toString() || index} className="w-[320px] h-[300px] bg-black border border-gray-800 rounded-xl overflow-hidden cursor-pointer hover:bg-gray-900 transition mb-6">
 
                         <div className="relative w-full aspect-video">
-                            <Image
-                                src={`${videos.videoUrl}//ik-thumbnail.jpg`}
-                                className="w-full h-full object-cover"
-                                alt = "thumbnail image"
-                                width = "320"
-                                height = "150"
-                            />
+                           <Video
+                                src = {videos.videoUrl}
+                                controls = {true}
+                           />
                         </div>
 
                         <CardContent className="p-3">
@@ -55,7 +51,6 @@ export default function Dashboard() {
                             </p>
                         </CardContent>
                     </Card>
-                </Link>
             ))}
         </div>
     )
