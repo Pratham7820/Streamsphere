@@ -49,16 +49,15 @@ Create a `.env.local` file in the project root:
 
 ```env
 # MongoDB
-MONGODB_URL=your_mongodb_connection_string
+MONGODB_URL = your_mongodb_connection_string
 
-# NextAuth
-NEXTAUTH_SECRET=your_nextauth_secret
-NEXTAUTH_URL=http://localhost:3000
+# NextAuth 
+NEXTAUTH_SECRET = your_nextauth_secret
 
 # ImageKit
-NEXT_PUBLIC_PUBLIC_KEY=your_imagekit_public_key
-IMAGEKIT_PRIVATE_KEY=your_imagekit_private_key
-NEXT_PUBLIC_URL_ENDPOINT=your_imagekit_url_endpoint
+NEXT_PUBLIC_PUBLIC_KEY = your_imagekit_public_key
+NEXT_PUBLIC_URL_ENDPOINT = your_imagekit_url_endpoint
+IMAGEKIT_PRIVATE_KEY = your_imagekit_private_key
 ```
 
 ### 4. Run the development server
